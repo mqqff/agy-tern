@@ -116,6 +116,13 @@ local function run_select_all(cx)
 	end
 end
 
+local function has_surface_overlay(cx, pane_id: number): boolean
+	local ok_surf, surf = pcall(function()
+		return cx.session:surface(pane_id, { depth = 1 })
+	end)
+	return ok_surf and surf ~= nil and type(surf) ~= "string" and surf.layer ~= nil
+end
+
 tern.command({
 	id = "ctrl-a",
 	title = "Smart Select All (agy-tern)",
@@ -133,10 +140,7 @@ tern.command({
 
 		local pane = cx.session:pane(pane_id)
 		if is_agy_tern(pane) then
-			local ok_surf, surf = pcall(function()
-				return cx.session:surface(pane_id, { depth = 1 })
-			end)
-			if ok_surf and surf ~= nil and type(surf) ~= "string" and surf.layer ~= nil then
+			if has_surface_overlay(cx, pane_id) then
 				run_select_all(cx)
 				return
 			end
@@ -144,7 +148,11 @@ tern.command({
 			return
 		end
 
-		if not pane or pane.kind == "terminal" or pane.kind == "agent" or pane.kind == "plugin" then
+		if pane and (pane.kind == "terminal" or pane.kind == "agent" or pane.kind == "plugin") then
+			if (pane.kind == "agent" or pane.kind == "plugin") and has_surface_overlay(cx, pane_id) then
+				run_select_all(cx)
+				return
+			end
 			pcall(function()
 				cx:run(pane_id, string.char(1))
 			end)
@@ -162,7 +170,7 @@ local function override_agy_scroll(action: string, seq: string)
 			return false
 		end
 		local pane = cx.session:pane(pane_id)
-		if not is_agy_tern(pane) then
+		if not is_agy_tern(pane) or has_surface_overlay(cx, pane_id) then
 			return false
 		end
 		cx:run(pane_id, seq)
