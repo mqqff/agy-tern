@@ -107,11 +107,11 @@ end
 
 local function run_select_all(cx)
 	local ok = pcall(function()
-		cx.actions:run("select_all")
+		cx:action("edit.select_all")
 	end)
 	if not ok then
 		pcall(function()
-			cx.actions:run("edit.select_all")
+			cx:action("select_all")
 		end)
 	end
 end
