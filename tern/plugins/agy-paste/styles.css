@@ -73,6 +73,10 @@
 	display: none;
 }
 
+.sf-col[data-role="agy.dock.center"] .sf-row[data-role="omp.composer.bar"] > .sf-caption {
+	display: none;
+}
+
 .sf-scroll[data-id="main.conversation"] .sf-message[data-side="end"]:not([data-variant="flat"]) {
 	grid-template-columns: minmax(0, 1fr) auto;
 	column-gap: 8px;
