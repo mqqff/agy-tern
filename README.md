@@ -17,7 +17,8 @@ Repository: `https://github.com/mqqff/agy-tern`
     - `agy-tern` conversation/composer typography & layout tweaks
     - `.sf-overlay.modal` fixes so long text inputs and multi-line option buttons wrap instead of clipping
 - `patches/patch-agy-tern.py`
-  - Patches `agy-tern`'s `dist/ui-*.js` so `Ctrl+Home` and `Ctrl+End` scroll `main.conversation` to `"start"` and `"end"` (re-run after `agy-tern` updates)
+  - Patches `agy-tern`'s `dist/ui-*.js` so `Ctrl+Home` and `Ctrl+End` scroll `main.conversation` to `"start"` and `"end"`
+  - Hides the truncated command `target` in expanded `Run command` tool headers when the full command is already shown in the body (re-run after `agy-tern` updates)
 - `install.sh`
   - Auto-installs `wl-clipboard` and `xclip` (`dnf`, `apt-get`, `pacman`, or `zypper`)
   - Installs the `agy-paste` plugin to `~/.config/tern/plugins/agy-paste/`
