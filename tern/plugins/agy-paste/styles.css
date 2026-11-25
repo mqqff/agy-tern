@@ -1,0 +1,130 @@
+.sf-scroll[data-id="main.conversation"] > .sf-scroll-view {
+	padding-left: 24px;
+	padding-right: 24px;
+	padding-bottom: 24px;
+	box-sizing: border-box;
+}
+
+.sf-scroll[data-id="main.conversation"] > .sf-scroll-view > * {
+	width: 100%;
+	max-width: 960px;
+	align-self: center;
+	margin-left: auto;
+	margin-right: auto;
+	box-sizing: border-box;
+}
+
+.sf-row[data-role="agy.tabs"] {
+	display: none;
+}
+
+.sf-scroll[data-id="main.conversation"] .sf-message[data-side="end"],
+.sf-scroll[data-id="main.conversation"] .sf-message[data-side="end"] .sf-md,
+.sf-scroll[data-id="main.conversation"] .sf-message[data-side="end"] .sf-md .md,
+.sf-scroll[data-id="main.conversation"] .sf-message[data-side="end"] .sf-text,
+.sf-col[data-role="agy.dock.center"] {
+	font-size: 15px;
+	line-height: 22px;
+}
+
+.sf-col[data-role="agy.dock.center"] {
+	padding-top: 14px;
+}
+
+.sf-scroll[data-id="main.conversation"] .sf-message[data-side="start"],
+.sf-scroll[data-id="main.conversation"] .sf-message[data-side="start"] .sf-md,
+.sf-scroll[data-id="main.conversation"] .sf-message[data-side="start"] .sf-md .md,
+.sf-scroll[data-id="main.conversation"] .sf-message[data-side="start"] .sf-text {
+	font-size: 14px;
+	line-height: 21px;
+}
+
+.sf-scroll[data-id="main.conversation"] .sf-message[data-side="start"] .sf-md .md h1 {
+	font-size: 20px;
+}
+
+.sf-scroll[data-id="main.conversation"] .sf-message[data-side="start"] .sf-md .md h2 {
+	font-size: 17px;
+}
+
+.sf-scroll[data-id="main.conversation"] .sf-message[data-side="start"] .sf-md .md h3 {
+	font-size: 15.5px;
+}
+
+.sf-scroll[data-id="main.conversation"] .sf-message[data-side="start"] .sf-md .md code {
+	font-size: 13px;
+}
+
+.sf-scroll[data-id="main.conversation"] .sf-md .md .code pre,
+.sf-scroll[data-id="main.conversation"] .sf-md .md pre code,
+.sf-col[data-role="agy.dock.center"] .sf-editor,
+.sf-col[data-role="agy.dock.center"] .sf-input {
+	--sf-lh: 20px;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.sf-col[data-role="agy.dock.center"] .sf-row[data-role="omp.composer.line"],
+.sf-col[data-role="agy.dock.center"] .sf-editor {
+	min-height: 20px;
+}
+
+.sf-col[data-role="agy.dock.center"] .sf-text[data-role="agy.dock.keys"] {
+	display: none;
+}
+
+.sf-scroll[data-id="main.conversation"] .sf-message[data-side="end"]:not([data-variant="flat"]) {
+	grid-template-columns: minmax(0, 1fr) auto;
+	column-gap: 8px;
+}
+
+.sf-scroll[data-id="main.conversation"] .sf-message[data-side="end"]:not([data-variant="flat"]) > .sf-msg-body {
+	max-width: min(65vw, 560px);
+}
+
+.sf-scroll[data-id="main.conversation"] .sf-message[data-side="end"]:not([data-variant="flat"]) > .sf-msg-foot {
+	grid-column: 1;
+	grid-row: 2;
+	justify-self: end;
+	align-self: end;
+	flex-direction: row;
+	justify-content: flex-end;
+	min-height: 0;
+	margin-top: 0;
+	margin-bottom: 6px;
+}
+
+.sf-overlay.modal .sf-input {
+	height: auto;
+	min-height: calc(var(--sf-lh) + 8px);
+	padding: 4px 8px;
+	overflow: hidden;
+}
+
+.sf-overlay.modal .sf-input .sf-ed-scroll {
+	overflow-x: hidden;
+	overflow-y: auto;
+	max-height: 120px;
+}
+
+.sf-overlay.modal .sf-input .sf-ed-text {
+	white-space: pre-wrap;
+	overflow-wrap: anywhere;
+}
+
+.sf-overlay.modal .sf-ov-body .sf-col > .sf-button[data-size='sm'] {
+	height: auto;
+	min-height: 22px;
+	padding: 4px 8px;
+	white-space: normal;
+	line-height: 1.35;
+	text-align: left;
+	max-width: 100%;
+}
+
+.sf-overlay.modal .sf-ov-body .sf-button .sf-btn-label {
+	overflow: visible;
+	text-overflow: clip;
+	margin: 0;
+	padding: 0;
+}

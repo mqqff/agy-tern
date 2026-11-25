@@ -1,0 +1,6 @@
+schema = 1
+id = "agy-paste"
+name = "AGY Ctrl+V Image Paste"
+version = "0.1.0"
+window = "window.luau"
+styles = ["styles.css"]
