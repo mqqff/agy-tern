@@ -155,27 +155,6 @@ tern.command({
 	end,
 })
 
-tern.css("toast-top-right", [[
-html:not(.tn-phone) body > .toast {
-	top: 48px;
-	right: 16px;
-	left: auto;
-	bottom: auto;
-	transform: none;
-}
-
-html:not(.tn-phone) body > .toast:not(.swap) {
-	animation: toastInTopRight 0.28s var(--out);
-}
-
-@keyframes toastInTopRight {
-	from {
-		opacity: 0;
-		transform: translateY(-6px);
-	}
-}
-]])
-
 local function override_agy_scroll(action: string, seq: string)
 	tern.override(action, function(cx): boolean?
 		local pane_id = cx.session:focused()
